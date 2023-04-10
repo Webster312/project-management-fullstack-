@@ -12,9 +12,9 @@ function ProjectDetailsPage (props) {
   const [project, setProject] = useState(null);
   const { projectId } = useParams();
   
-  const getProject = () => {
+  const getProject = (projectId) => {
     axios
-      .get(`${API_URL}/api/projects/${projectId}`)
+      .get(`${process.env.REACT_API_URL}/api/projects/${projectId}`)
       .then((response) => {
       	const oneProject = response.data;
       	setProject(oneProject);
@@ -24,8 +24,8 @@ function ProjectDetailsPage (props) {
   
   
   useEffect(()=> {
-    getProject();
-  }, [] );
+    getProject(projectId);
+  }, [projectId] );
 
   
   return (
