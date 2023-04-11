@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
 
 
 function AddTask(props) {
@@ -18,7 +17,7 @@ function AddTask(props) {
     const requestBody = { title, description, projectId };
 
     axios
-      .post(`${API_URL}/api/tasks`, requestBody)
+      .post(`${process.env.REACT_API_URL}/api/tasks`, requestBody)
       .then((response) => {
         // Reset the state to clear the inputs
         setTitle("");

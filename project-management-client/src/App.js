@@ -8,7 +8,9 @@ import EditProjectPage from "./pages/EditProjectPage";
 
 
 function App() {
+  
   return (
+    
     <div className="App">
       <Navbar />
 
